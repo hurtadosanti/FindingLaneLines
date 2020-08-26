@@ -16,19 +16,21 @@ The goals of this project are the following:
 The pipeline is defined in four(4) steps:
 
 1. Read the image or frame
+![original](original.png)
 2. Highlight sections of interest by converting the image to HSV color space and find regions in the ranges:
     
         low_boundary=(0,0,200)
         high_boundary=(255,150,255)
-
 3. Select the interest region to focus only on the road and remove other possible noise
 4. Find the lanes lines using HoughLinesP and draw complete lines 
+![result1](solidLine.png)
+![result1](solidYellowLine.png)
 
 When highlighting the sections of interest the HSV color space is used which helps with not having problems between yellow and white lines, they are processed equally.
 
 To get the lines I use a naive approach, of first separate lines by the positive and negative slope. Afterward, I average the slope and intercept. To find the x,y values of the lines it is used the low and high numbers on the Y-axis from the interest Region. Then, using the average slope and the average intercept, the X values are calculated.
 
-![alt text][image1]
+
 
 ### 2. Identify potential shortcomings with your current pipeline
 The issues identified with the actual solution are:
