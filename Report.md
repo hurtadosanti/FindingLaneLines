@@ -6,18 +6,15 @@ The goals of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
 ---
 
 ### Reflection
 The pipeline is defined in four(4) steps:
 
 1. Read the image or frame
-![original](original.png)
 
+![original](original.png)
+<br>
 2. Highlight sections of interest by converting the image to HSV color space and find regions in the ranges:
     
         low_boundary=(0,0,200)
