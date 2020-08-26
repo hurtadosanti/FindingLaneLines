@@ -17,13 +17,16 @@ The pipeline is defined in four(4) steps:
 
 1. Read the image or frame
 ![original](original.png)
+
 2. Highlight sections of interest by converting the image to HSV color space and find regions in the ranges:
     
         low_boundary=(0,0,200)
         high_boundary=(255,150,255)
 3. Select the interest region to focus only on the road and remove other possible noise
 4. Find the lanes lines using HoughLinesP and draw complete lines 
+
 ![result1](solidLine.png)
+<br>
 ![result1](solidYellowLine.png)
 
 When highlighting the sections of interest the HSV color space is used which helps with not having problems between yellow and white lines, they are processed equally.
